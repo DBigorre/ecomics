@@ -5,3 +5,21 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+require 'faker'
+puts "destroy all"
+Comic.destroy_all
+
+puts "creating comics"
+
+50.times do
+  comic = Comic.new(
+    name: Faker::DcComics.title,
+    house: "DC Comics",
+    serie: Faker::DcComics.hero,
+    collector: Faker::Boolean.boolean(true_ratio: 0.2),
+    price: Faker::Number.decimal(l_digits: 2),
+    date: Faker::Date.backward(days: 10950 )
+  )
+  comic.save!
+end
+puts 'Finished!'
