@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row">
+    <div class="cards">
+      <% @dc_comics = Comic.where(house: 'DC Comics')%>
+      <% @dc_comics.each do |dc_comic| %>
+              <%= link_to comic_path(dc_comic) do %>
+                <%= render 'comics/cards', comic: dc_comic %>
+              <% end %>
+            <% end %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="cards">
+      <% @marvel_comics = Comic.where(house: 'Marvel')%>
+      <% @marvel_comics.each do |marvel_comic| %>
+              <%= link_to comic_path(marvel_comic) do %>
+                <%= render 'comics/cards', comic: marvel_comic %>
+              <% end %>
+            <% end %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="cards">
+      <% @valiant_comics = Comic.where(house: 'Valiant')%>
+      <% @valiant_comics.each do |valiant_comic| %>
+              <%= link_to comic_path(valiant_comic) do %>
+                <%= render 'comics/cards', comic: valiant_comic %>
+              <% end %>
+            <% end %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="cards">
+      <% @other_comics = Comic.where(house: 'Other')%>
+      <% @other_comics.each do |other_comic| %>
+              <%= link_to comic_path(other_comic) do %>
+                <%= render 'comics/cards', comic: other_comic %>
+              <% end %>
+            <% end %>
+    </div>
+  </div>
+</div>

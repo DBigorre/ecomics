@@ -1,0 +1,3 @@
+ <% @marvel_comics.each do |marvel_comics| %>
+        <%= link_to comic_path(marvel_comics) do %>
+          <%= render 'comics/cardindex', comic: marvel_comics %>

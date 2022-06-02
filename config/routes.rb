@@ -6,4 +6,8 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   resources :comics
+  get "comics/dc", to: "comics#indexdc"
+  get "comics/marvel", to: "comics#indexmarvel"
+  get "comics/valiant", to: "comics#indexvaliant"
+  get "comics/other", to: "comics#indexother"
 end

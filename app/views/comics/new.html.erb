@@ -1,0 +1,9 @@
+<%= form_for(@comic) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :serie %>
+  <%= f.text_field :serie %>
+  <%= f.label :price %>
+  <%= f.number_field :price %>
+  <%= f.submit %>
+<% end %>

@@ -14,6 +14,7 @@ puts "creating comics"
 50.times do
   comic = Comic.new(
     name: Faker::DcComics.title,
+    illustration: "http://rockyrama.com/uploads/img/news/119-les-couvertures-de-comics-les-plus-cool-de-tous-les-temps/content/6538/noresize-rsz_74438007b5a7eca15882f0016e1dd5f5.jpg",
     house: "DC Comics",
     serie: Faker::DcComics.hero,
     collector: Faker::Boolean.boolean(true_ratio: 0.2),

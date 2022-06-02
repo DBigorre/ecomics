@@ -1,4 +1,6 @@
 class ComicsController < ApplicationController
+  skip_before_action :authenticate_user!
+
   def new
     @comic = Comic.new
   end
@@ -14,16 +16,16 @@ class ComicsController < ApplicationController
     end
   end
 
+  def show
+    @comic = Comic.find(params[:id])
+  end
+
   def index
     @comics = Comic.all
     @dc_comics = Comic.where(house: 'DC Comics')
     @marvel_comics = Comic.where(house: 'Marvel')
     @valiant_comics = Comic.where(house: 'Valiant')
     @other_comics = Comic.where(house: 'Other')
-  end
-
-  def show
-    @comic = Comic.find(params[:id])
   end
 
   def indexdc
