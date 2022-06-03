@@ -1,5 +1,8 @@
 <%@comics.each do |comic|%>
   <% if comic.house == "DC Comics"%>
+    <%= comic.illustration %>
     <%= comic.name %>
+    <%= comic.price %>
+    <%= comic.date %>
   <% end %>
 <% end %>

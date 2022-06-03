@@ -1,4 +1,4 @@
- <nav>
+<nav>
   <ul>
     <li><%= link_to "Home", root_path %></li>
     <li><%= link_to "Comics", comics_path %></li>
@@ -14,15 +14,15 @@
     <li>
       <a href="#">Contact</a>
       <ul>
-        <li><a href="#0">LinkedIn</a></li>
-        <li><a href="#0">Facebook</a></li>
-        <li><a href="#0">Instagram</a></li>
+        <li><a href="#">LinkedIn</a></li>
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">Instagram</a></li>
       </ul>
     </li>
     <% if user_signed_in? %>
-    <li><%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %> </li>
+    <li><%= link_to "Log out", destroy_user_session_path, method: :delete %> </li>
   <% else %>
-    <li><%= link_to "Login", new_user_session_path, class: "nav-link" %> </li>
-    </ul>
+    <li><%= link_to "Login", new_user_session_path %> </li>
   <% end %>
+  </ul>
 </nav>

@@ -1,3 +1,8 @@
- <% @other_comics.each do |other_comics| %>
-        <%= link_to comic_path(other_comics) do %>
-          <%= render 'comics/cardindex', comic: other_comics %>
+<%@comics.each do |comic|%>
+  <% if comic.house == "Other"%>
+    <%= comic.illustration %>
+    <%= comic.name %>
+    <%= comic.price %>
+    <%= comic.date %>
+  <% end %>
+<% end %>

@@ -11,3 +11,4 @@ Rails.application.routes.draw do
   get "comics/other", to: "comics#indexother"
   resources :comics
 end
+
