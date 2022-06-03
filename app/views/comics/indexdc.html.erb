@@ -1,4 +1,5 @@
- 
- <% @dc_comics.each do |dc_comic| %>
-        <%= link_to comic_path(dc_comic) do %>
-          <%= render 'comics/cardindex', comic: dc_comic %>
+<%@comics.each do |comic|%>
+  <% if comic.house == "DC Comics"%>
+    <%= comic.name %>
+  <% end %>
+<% end %>

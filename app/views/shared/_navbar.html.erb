@@ -1,51 +1,28 @@
-<div class="container">
-  <nav>
-    <% if user_signed_in? %>
-    <ul>
-      <li><a href="#0">Home</a></li>
-      <li><a href="comics_path">Comics</a></li>
-      <li>
-        <a href="#0">Clients</a>
-        <ul>
-          <li><a href="#0">Burger King</a></li>
-          <li><a href="#0">Southwest Airlines</a></li>
-          <li><a href="#0">Levi Strauss</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="#0">Services</a>
-        <ul>
-          <li><a href="#0">Print Design</a></li>
-          <li><a href="#0">Web Design</a></li>
-          <li><a href="#0">Mobile App Development</a></li>
-        </ul>
-      </li>
-      <li><a href="#0">Contact</a></li>
-      <li><%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %> </li>
-    </ul>
-    <% else %>
+ <nav>
+  <ul>
+    <li><%= link_to "Home", root_path %></li>
+    <li><%= link_to "Comics", comics_path %></li>
+    <li>
+      <a href="#">Editeurs</a>
       <ul>
-        <li><a href="#0">Home</a></li>
-         <li><a href="comics_path">Comics</a></li>
-        <li>
-          <a href="#0">Clients</a>
-          <ul>
-            <li><a href="#0">Burger King</a></li>
-            <li><a href="#0">Southwest Airlines</a></li>
-            <li><a href="#0">Levi Strauss</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="#0">Services</a>
-          <ul>
-            <li><a href="#0">Print Design</a></li>
-            <li><a href="#0">Web Design</a></li>
-            <li><a href="#0">Mobile App Development</a></li>
-          </ul>
-        </li>
-        <li><a href="#0">Contact</a></li>
-        <li><%= link_to "Login", new_user_session_path, class: "nav-link" %> </li>
+        <li><%= link_to "DC Comics", comics_dc_path %></li>
+        <li><%= link_to "Marvel", comics_marvel_path %></li>
+        <li><%= link_to "Valiant", comics_valiant_path %></li>
+        <li><%= link_to "Other", comics_other_path %></li>
       </ul>
-    <% end %>
-  </nav>
-</div>
+    </li>
+    <li>
+      <a href="#">Contact</a>
+      <ul>
+        <li><a href="#0">LinkedIn</a></li>
+        <li><a href="#0">Facebook</a></li>
+        <li><a href="#0">Instagram</a></li>
+      </ul>
+    </li>
+    <% if user_signed_in? %>
+    <li><%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %> </li>
+  <% else %>
+    <li><%= link_to "Login", new_user_session_path, class: "nav-link" %> </li>
+    </ul>
+  <% end %>
+</nav>

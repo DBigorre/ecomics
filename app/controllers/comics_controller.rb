@@ -22,14 +22,15 @@ class ComicsController < ApplicationController
 
   def index
     @comics = Comic.all
-    @dc_comics = Comic.where(house: 'DC Comics')
-    @marvel_comics = Comic.where(house: 'Marvel')
-    @valiant_comics = Comic.where(house: 'Valiant')
-    @other_comics = Comic.where(house: 'Other')
+    #@dc_comics = Comic.where(house: 'DC Comics')
+    #@marvel_comics = Comic.where(house: 'Marvel')
+    #@valiant_comics = Comic.where(house: 'Valiant')
+    #@other_comics = Comic.where(house: 'Other')
   end
 
   def indexdc
-    @dc_comics = Comic.where(house: 'DC Comics')
+    @comics = Comic.all
+    
   end
 
   def indexmarvel
@@ -50,4 +51,4 @@ class ComicsController < ApplicationController
     params.require(:comic).permit(:name, :illustration, :house, :serie, :collector, :price, :date)
   end
 
-  end
+end
