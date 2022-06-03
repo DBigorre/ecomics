@@ -1,0 +1,32 @@
+.containerform {
+  height: 100vh;
+  width: 100vw;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.pictureform {
+  width: 480px;
+  margin-left: 20px;
+}
+
+.formulaire-signup {
+  width: 480px;
+  margin: 0 auto;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.formulaire-signup input {
+  vertical-align: middle;
+
+  color: #E02A21;
+  background-color: #2375D8;
+}
+
+.btn-primary input:hover {
+  color: #2375D8;
+  background-color:#E02A21 ;
+
+}

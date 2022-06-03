@@ -1,4 +1,14 @@
 <div class="container">
+  <div class= "formquery">
+    <%= form_tag comics_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Chercher un comics"
+      %>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
+    <% end %>
+  </div>
   <div class="row">
     <div class="cards">
       <% @dc_comics = Comic.where(house: 'DC Comics')%>
